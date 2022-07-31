@@ -13,7 +13,6 @@ const update = function () {
   const keys = Object.keys(user);
 
   for (const key of keys) {
-    const keyValue = key;
     console.log(`${key}: ${user[key]} `);
   }
 };
