@@ -7,15 +7,9 @@ const products = [
 
 const getAllPropValues = function (arr, prop) {
   let allPropValues = [];
-  for (let i = 0; i < arr.length; i++) {
-    const arrayValues = Object.values(arr[i]);
-    const arrayKeys = Object.keys(arr[i]);
-    if (prop === arrayKeys[0]) {
-      allPropValues.push(arrayValues[0]);
-    } else if (prop === arrayKeys[1]) {
-      allPropValues.push(arrayValues[1]);
-    } else if (prop === arrayKeys[2]) {
-      allPropValues.push(arrayValues[2]);
+  for (const product of arr) {
+    if (product[prop] !== undefined) {
+      allPropValues.push(product[prop]);
     }
   }
   return allPropValues;

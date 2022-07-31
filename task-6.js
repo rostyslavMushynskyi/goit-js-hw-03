@@ -5,16 +5,13 @@ const products = [
   { name: "Захоплення", price: 1200, quantity: 2 },
 ];
 
+let totalPrice = 0;
+
 const calculateTotalPrice = function (allProdcuts, productName) {
-  let totalPrice = 0;
-  if (productName === allProdcuts[0].name) {
-    totalPrice = products[0].price * products[0].quantity;
-  } else if (productName === allProdcuts[1].name) {
-    totalPrice = products[1].price * products[1].quantity;
-  } else if (productName === allProdcuts[2].name) {
-    totalPrice = products[2].price * products[2].quantity;
-  } else if (productName === allProdcuts[3].name) {
-    totalPrice = products[3].price * products[3].quantity;
+  for (const product of products) {
+    if (product.name === productName) {
+      totalPrice = product.price * product.quantity;
+    }
   }
   return totalPrice;
 };
